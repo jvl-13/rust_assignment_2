@@ -64,7 +64,7 @@
 //     let values_number = values.len();
 //     let values_index_max = values_number - 1;
 
-//     let additions: &Vec<usize> = &vec![0];
+//     let additions: Vec<usize> = vec![0];
 
 //     println!("{:?}", values_number);
 
@@ -73,7 +73,7 @@
 //         let mut saltar: i32 = 0;
 
 //         // Sumar valores en additions
-//         for element_index in additions {
+//         for element_index in &additions {
 //             let addition_aux = values[*element_index];
 //             addition = addition_aux + addition;
 //         }
@@ -97,8 +97,8 @@
 // pub fn iter_num(num: i32) -> bool {
 
 //     let num_str = num.to_string();
-//     let chars = &mut num_str.chars(); // <-- move occurs because `chars` has type `Chars<'_>`, which does not implement the `Copy` trait
-//     let len = chars.count();     // <-- `chars` moved due to this method call
+//     let chars = num_str.chars(); // <-- move occurs because `chars` has type `Chars<'_>`, which does not implement the `Copy` trait
+//     let len = chars.clone().count();     // <-- `chars` moved due to this method call
 
 //     println!("Len = {:?}", len);
 
